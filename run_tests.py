@@ -38,10 +38,10 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Shortest->", short_dist)
     #middle
     mid_dist = e_distance(pt_pair2[0], pt_pair2[1], node_csv)
-    print("Shortest->", mid_dist)
+    print("Middle->", mid_dist)
     #furthest
     far_dist = e_distance(pt_pair3[0], pt_pair3[1], node_csv)
-    print("Shortest->", far_dist)
+    print("Furthest->", far_dist)
 
     #assign neighbors and store in 2D list of tuples w/ edge lengths
     neighbors = assignNeighbors(edge_csv, num_nodes)

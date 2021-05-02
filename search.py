@@ -409,37 +409,38 @@ def main():
     #path1 = getPath(start, end, test_parents)
     print("PATH:", path1)
 
+    #TEST: look for nodes that could work
+    # curr_max = 0
+    # new_max = -1
+    # for i in range(100,150):
+    #     #test = astar(i, 5406, ol_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", 1, pt2)
+    #     test = astar(0, i, sf_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/SF.cnode.csv", 1, pt2)
+    #     curr_len = len(test)
+    #     print(i, curr_len)
+    #     if curr_len > curr_max:
+    #         curr_max = len(test)
+    #         print("NEW:", curr_max)
+    #         print("id:", i)
+    #         new_max = i
+    # print("LONGEST NEIGHBOR LIST", new_max)
+    # print("Length:", curr_max)
+
     #A* TEST
     #heuristic 1
     #call astar w/ start node 4 & goal node 5
-    # test_parents2 = astar(4, 5, test_neighbors,"test_nodes.csv", 1, pt2)
-    curr_max = 0
-    new_max = -1
-    for i in range(16500,16600):
-        #test = astar(i, 5406, ol_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", 1, pt2)
-        test = astar(0, i, sf_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/SF.cnode.csv", 1, pt2)
-        curr_len = len(test)
-        print(i, curr_len)
-        if curr_len > curr_max:
-            curr_max = len(test)
-            print("NEW:", curr_max)
-            print("id:", i)
-            new_max = i
-    print("LONGEST NEIGHBOR LIST", new_max)
-    print("Length:", curr_max)
-    # start = 0
-    # end = 5973
+    test_parents2 = astar(4, 5, test_neighbors,"test_nodes.csv", 1, pt2)
+    # start = 1000
+    # end = 4808
     # test_parents2 = astar(start, end, ol_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", 1, pt2)
-    # print("PARENTS", test_parents2)
-    # print("neighbors of start:", ol_neighbors[start])
-    # print("neighbors of end:", ol_neighbors[end])
-    # print("length of parents:", len(test_parents2))
-    # #DISPLAY PATH TEST
-    # # displayPath(4, 5, test_parents2)
-    # displayPath(start, end, test_parents2)
-    # #path2 = getPath(4,5,test_parents2)
-    # path2 = getPath(start, end, test_parents2)
-    # print("PATH:", path2)
+    # test_parents2 = astar(start, end, sf_neighbors,"/Users/hannahwillmarth/Desktop/4511WFinalProject/data/SF.cnode.csv", 1, pt2)
+    #print("PARENTS", test_parents2)
+    #print("length of parents:", len(test_parents2))
+    #DISPLAY PATH TEST
+    displayPath(4, 5, test_parents2)
+    #displayPath(start, end, test_parents2)
+    path2 = getPath(4,5,test_parents2)
+    #path2 = getPath(start, end, test_parents2)
+    print("PATH:", path2)
 
     #heuristic 2 [left turn penalty]
     #call astar w/ start node 4 & goal node 5
@@ -462,25 +463,27 @@ def main():
     findEdgeCount(path1, pt1)
     print("Edges:", pt1.getEdgesTraversed())
     findDistCovered(path1, test_neighbors, pt1)
-    # findDistCovered(path1, ol_neighbors, pt1)
+    #findDistCovered(path1, ol_neighbors, pt1)
     #findDistCovered(path1, sf_neighbors, pt1)
     print("Distance covered:", pt1.getDistCovered())
     findLTurnsTaken(path1, "test_nodes.csv", pt1)
-    # findLTurnsTaken(path1, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", pt1)
+    #findLTurnsTaken(path1, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", pt1)
     #findLTurnsTaken(path1, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/SF.cnode.csv", pt1)
     print("Left turns made:", pt1.getLTurnsMade())
     print("Nodes visited:", pt1.getNodesVisited())
 
-    # print("2. A Star, Heuristic 1 ------------")
-    # findEdgeCount(path2, pt2)
-    # print("Edges:", pt2.getEdgesTraversed())
-    # #findDistCovered(path2, test_neighbors, pt2)
-    # findDistCovered(path2, ol_neighbors, pt2)
-    # print("Distance covered:", pt2.getDistCovered())
-    # #findLTurnsTaken(path2, "test_nodes.csv", pt2)
-    # findLTurnsTaken(path2, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", pt1)
-    # print("Left turns made:", pt2.getLTurnsMade())
-    # print("Nodes visited:", pt2.getNodesVisited())
+    print("2. A Star, Heuristic 1 ------------")
+    findEdgeCount(path2, pt2)
+    print("Edges:", pt2.getEdgesTraversed())
+    findDistCovered(path2, test_neighbors, pt2)
+    #findDistCovered(path2, ol_neighbors, pt2)
+    #findDistCovered(path2, sf_neighbors, pt2)
+    print("Distance covered:", pt2.getDistCovered())
+    # findLTurnsTaken(path2, "test_nodes.csv", pt2)
+    #findLTurnsTaken(path2, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/OL.cnode.csv", pt2)
+    #findLTurnsTaken(path1, "/Users/hannahwillmarth/Desktop/4511WFinalProject/data/SF.cnode.csv", pt2)
+    print("Left turns made:", pt2.getLTurnsMade())
+    print("Nodes visited:", pt2.getNodesVisited())
 
     print("3. A Star, Heuristic 2 ------------")
     findEdgeCount(path3, pt3)
@@ -499,8 +502,6 @@ def main():
     findLTurnsTaken(path4, "test_nodes.csv", pt4)
     print("Left turns made:", pt4.getLTurnsMade())
     print("Nodes visited:", pt4.getNodesVisited())
-
-
 
 if __name__ == '__main__' :
     main()
