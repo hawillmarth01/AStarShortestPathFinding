@@ -62,8 +62,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_short_ucs = getPath(pt_pair1[0], pt_pair1[1], parents_short_ucs)
 
     #END TIME
-    ptracker_ucs.endTimer()
-    time_elasped = ptracker_ucs.timeElapsed()
+    time_elapsed = ptracker_ucs.endTimer()
 
     #display path and metrics
     print("+++++++++++++++++++++++Closest pair of points+++++++++++++++++++++++")
@@ -76,11 +75,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_ucs.getNodesVisited())
     findLTurnsTaken(path_short_ucs, node_csv, ptracker_ucs)
     print("Left turns made:", ptracker_ucs.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker and time elapsed var to be reused
     del ptracker_ucs
-    del time_elasped
+    del time_elapsed
 
     #middle distance
     #set-up perfomance tracker object to track performance metrics
@@ -93,8 +94,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_mid_ucs = getPath(pt_pair2[0], pt_pair2[1], parents_mid_ucs)
 
     #END TIME
-    ptracker_ucs.endTimer()
-    time_elasped = ptracker_ucs.timeElapsed()
+    time_elapsed = ptracker_ucs.endTimer()
 
     #display path and metrics
     print("+++++++++++++++++++++++Middle pair of points+++++++++++++++++++++++")
@@ -107,11 +107,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_ucs.getNodesVisited())
     findLTurnsTaken(path_mid_ucs, node_csv, ptracker_ucs)
     print("Left turns made:", ptracker_ucs.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker and time elapsed var to be reused
     del ptracker_ucs
-    del time_elasped
+    del time_elapsed
 
     #furthest distance
     #set-up perfomance tracker object to track performance metrics
@@ -121,11 +123,10 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     ptracker_ucs.startTimer()
 
     parents_far_ucs = ucs(pt_pair3[0], pt_pair3[1], neighbors, ptracker_ucs)
-    path_far_ucs = getPath(pt_pair3[0], pt_pair3[1], parents_furthest_ucs)
+    path_far_ucs = getPath(pt_pair3[0], pt_pair3[1], parents_far_ucs)
 
     #END TIME
-    ptracker_ucs.endTimer()
-    time_elasped = ptracker_ucs.timeElapsed()
+    time_elapsed = ptracker_ucs.endTimer()
 
     #display path and metrics
     print("+++++++++++++++++++++++Furthest pair of points+++++++++++++++++++++++")
@@ -138,11 +139,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_ucs.getNodesVisited())
     findLTurnsTaken(path_far_ucs, node_csv, ptracker_ucs)
     print("Left turns made:", ptracker_ucs.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker and time var
     del ptracker_ucs
-    del time_elasped
+    del time_elapsed
 
     #################################################################################
     #set-up perfomance tracker objects to track performance metrics
@@ -166,8 +169,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_short_astar = getPath(pt_pair1[0], pt_pair1[1], parents_short_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_short_astar)
@@ -179,11 +181,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_short_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_short_astar
     del path_short_astar
 
@@ -198,6 +202,9 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     parents_short_astar = astar(pt_pair1[0], pt_pair1[1], neighbors, node_csv, 2, ptracker_astar)
     path_short_astar = getPath(pt_pair1[0], pt_pair1[1], parents_short_astar)
 
+    #END TIME
+    time_elapsed = ptracker_astar.endTimer()
+
     #display path and metrics
     print("Path found:", path_short_astar)
     print("________________________________________________")
@@ -208,11 +215,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_short_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_short_astar
     del path_short_astar
 
@@ -228,8 +237,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_short_astar = getPath(pt_pair1[0], pt_pair1[1], parents_short_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_short_astar)
@@ -241,13 +249,15 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_short_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
-    del parents_mid_astar
-    del path_mid_astar
+    del time_elapsed
+    del parents_short_astar
+    del path_short_astar
 
     #middle distance
     print("+++++++++++++++++++++++Middle pair of points+++++++++++++++++++++++")
@@ -263,8 +273,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_mid_astar = getPath(pt_pair2[0], pt_pair2[1], parents_mid_astar)
     
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_mid_astar)
@@ -276,11 +285,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_mid_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_mid_astar
     del path_mid_astar
 
@@ -296,8 +307,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_mid_astar = getPath(pt_pair2[0], pt_pair2[1], parents_mid_astar)
     
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_mid_astar)
@@ -309,11 +319,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_mid_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_mid_astar
     del path_mid_astar
 
@@ -329,8 +341,7 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     path_mid_astar = getPath(pt_pair2[0], pt_pair2[1], parents_mid_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_mid_astar)
@@ -342,11 +353,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_mid_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_mid_astar
     del path_mid_astar
 
@@ -361,11 +374,10 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     ptracker_astar.startTimer()
     
     parents_far_astar = astar(pt_pair3[0], pt_pair3[1], neighbors, node_csv, 1, ptracker_astar)
-    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_furthest_astar)
+    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_far_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_far_astar)
@@ -377,11 +389,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_far_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_far_astar
     del path_far_astar
 
@@ -394,11 +408,10 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     ptracker_astar.startTimer()
 
     parents_far_astar = astar(pt_pair3[0], pt_pair3[1], neighbors, node_csv, 2, ptracker_astar)
-    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_furthest_astar)
+    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_far_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_far_astar)
@@ -410,11 +423,13 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_far_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_far_astar
     del path_far_astar
 
@@ -427,11 +442,10 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     ptracker_astar.startTimer()
 
     parents_far_astar = astar(pt_pair3[0], pt_pair3[1], neighbors, node_csv, 3, ptracker_astar)
-    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_furthest_astar)
+    path_far_astar = getPath(pt_pair3[0], pt_pair3[1], parents_far_astar)
 
     #END TIME
-    ptracker_astar.endTimer()
-    time_elasped = ptracker_astar.timeElapsed()
+    time_elapsed = ptracker_astar.endTimer()
 
     #display path and metrics
     print("Path found:", path_far_astar)
@@ -443,10 +457,12 @@ def run_tests(node_csv, edge_csv, map_name, pt_pair1, pt_pair2, pt_pair3):
     print("Nodes visited:", ptracker_astar.getNodesVisited())
     findLTurnsTaken(path_far_astar, node_csv, ptracker_astar)
     print("Left turns made:", ptracker_astar.getLTurnsMade())
-    print("Total time taken:", time_elasped)
+    print(f"Total time taken: {time_elapsed:0.5f} seconds")
+    print("________________________________________________")
+    print("\n")
 
     #delete performance tracker, and time elapsed/path variables to be reused
     del ptracker_astar
-    del time_elasped
+    del time_elapsed
     del parents_far_astar
     del path_far_astar

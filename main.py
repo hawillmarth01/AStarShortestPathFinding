@@ -17,13 +17,13 @@ def main():
     # #test start/goal pairs (start_node_id, goal_node_id)
     # sf_short = (118, 173166)
     # sf_mid = (44, 65370)
-    # sf_ far = (0, 75156)
+    # sf_far = (0, 75156)
 
     # # #make new map object
     # # map1 = Map("SAN FRANCISCO, CA", short, mid, far, sf_node_csv, sf_edge_csv)
 
     # #run tests
-    # run_tests(sf_node_csv, sf_edge_csv, "SAN FRANCISCO, CA", short, mid, far)
+    # run_tests(sf_node_csv, sf_edge_csv, "SAN FRANCISCO, CA", sf_short, sf_mid, sf_far)
 
     ##################################################################################
     

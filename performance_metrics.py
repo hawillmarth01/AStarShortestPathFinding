@@ -1,6 +1,6 @@
 #PERFORMANCE METRICS CLASS
 ###########################################################################################
-from datetime import datetime
+import time
 
 #class with variables and functions needed to measure performance of algorithms/heuristics
 class PerformanceTracker:
@@ -12,8 +12,8 @@ class PerformanceTracker:
         self.lturns_made = 0 #left turns made on path
 
         #used to store start and end times, initialize to current time
-        self.start = datetime.now()
-        self.end = datetime.now()
+        self.start = None
+        self.end = None
 
     #Getters:
     #gets # of edges traversed
@@ -50,15 +50,17 @@ class PerformanceTracker:
         self.nodes_visited += 1
     
     #Timer functions:
-    #"start" timer
+    #"start" timer (precision = microseconds)
     def startTimer(self):
-        start = datetime.now()
+        self.start = time.perf_counter()
 
-    #"end" timer
+    #"end" timer (precision = microseconds)
     def endTimer(self):
-        end = datetime.now()
+        elapsed = time.perf_counter() - self.start
+        self.start = None
+        return elapsed
 
-    #calculate elasped time
+    #calculate elasped
     def timeElapsed(self):
         elasped = self.end - self.start
         return elasped

@@ -259,7 +259,7 @@ def heuristic2(curr_node, neighbor_node, parents, node_filename, performance_tra
     deg_angle = rad_angle * (180 / math.pi)
 
     #if angle = positive, requires left turn off current road
-    bonus = -25 #TUNE
+    bonus = -50 #TUNE
     if deg_angle > 0: #left turn, return 0
         return 0
     else: #will be going straight or turning right, get negative "bonus"
@@ -294,7 +294,7 @@ def heuristic3(curr_node, neighbor_node, goal_node, node_filename):
 
     #if |angle| > 45, strays too much from goal direction
     bonus = -25 #TUNE
-    if abs(deg_angle) > 45: #is more than 45 degrees from goal direction, bonus
+    if abs(deg_angle) > 30: #is more than 45 degrees from goal direction, bonus
         return 0
     else: #will be traveling wihtin 45 degrees of goal direction, get negative "bonus"
         return bonus
