@@ -1,4 +1,4 @@
-# Evaluation of A* Path Finding on Real Map Data 
+# Evaluation of A* Shortest Path Finding on Real Map Data 
 ### Code used to evaluate A* search for CSCI 4511W Final Project
 
 ## Summary
