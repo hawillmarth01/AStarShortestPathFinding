@@ -13,7 +13,7 @@ Datasets found [here.](https://www.cs.utah.edu/~lifeifei/SpatialDataset.htm)
 
 ## Tests Performed
 A basic A* search algorithm is evaluated in a couple different circumstances. 
-Note: The A* code used is written based on publicly available resources included [here.](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+Note: The A* code used is written based on publicly available resource included [here.](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
 
 ### Uninformed vs. Informed
 
