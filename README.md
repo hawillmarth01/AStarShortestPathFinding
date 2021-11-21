@@ -1,1 +1,29 @@
-# csci4511Wfinalproject
+# Evaluation of A* Path Finding on Real Map Data 
+### Code for CSCI 4511W Final Project
+
+## Summary
+Using a set of performance metrics, A* search is evaluated on real-life map data. This repository includes all the files necessary to run outlined tests on two sets of map data of varying sizes.
+
+## Map Data
+CSV files are included representing maps of the following locations:
+* Oldenburg, Germany (6,105 nodes)- link here
+* San Francisco, CA, USA (174,956 nodes)- link here
+
+## Tests Performed
+A basic A* search algorithm is evaluated in a couple different circumstances. 
+Note: The A* code used is written based on publicly available resources included here.
+
+### Uninformed vs. Informed
+
+Although the focus of this project is A* search, Uniform Cost Search is also run in order to highlight the performance increase with an informed search algorithm.
+The UCS code included in based off of link here, with additional modifications to fit the flow of this specific project.
+
+### Heuristics
+
+Three different, admissible heuristics are tested with the basic A* algorithm.
+* Heuristic #1: Euclidean Distance between potential next node and goal node
+* Heuristic #2: Added Left Turn Penalty
+* Heuristic #3: Goal Direction Bonus
+
+### Usage
+'python3 main.py'
