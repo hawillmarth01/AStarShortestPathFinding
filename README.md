@@ -1,5 +1,5 @@
 # Evaluation of A* Path Finding on Real Map Data 
-### Code for CSCI 4511W Final Project
+### Code used to evaluate A* search for CSCI 4511W Final Project
 
 ## Summary
 Using a set of performance metrics, A* search is evaluated on real-life map data. This repository includes all the files necessary to run outlined tests on two sets of map data of varying sizes.
