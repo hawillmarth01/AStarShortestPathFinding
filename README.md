@@ -27,5 +27,5 @@ Three different, admissible heuristics are tested with the basic A* algorithm.
 * Heuristic #2: Added Left Turn Penalty
 * Heuristic #3: Goal Direction Bonus
 
-### Usage
+## Usage
 `python3 main.py`
