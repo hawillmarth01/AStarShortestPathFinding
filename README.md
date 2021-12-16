@@ -29,3 +29,7 @@ Three different, admissible heuristics are tested with the basic A* algorithm.
 
 ## Usage
 `python3 main.py`
+
+## Output
+![](output.gif)
+
